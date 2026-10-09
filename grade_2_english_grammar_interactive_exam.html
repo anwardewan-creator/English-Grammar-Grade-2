@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grade 2 English Grammar Exam (Units 1 - 14)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for playful and legible typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f0f7ff;
+    }
+    .heading-font {
+      font-family: 'Fredoka', cursive, sans-serif;
+    }
+    .option-card {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .option-card:hover {
+      transform: translateY(-2px);
+    }
+    .option-card.selected {
+      border-color: #3b82f6;
+      background-color: #eff6ff;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    @keyframes bounce-short {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-short-bounce {
+      animation: bounce-short 1.5s infinite ease-in-out;
+    }
+
+    /* Print Stylesheet for Nepali Teachers and Parents */
+    @media print {
+      body {
+        background-color: white !important;
+        font-family: 'Arial', sans-serif !important;
+        color: #000 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+      .question-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        background: white !important;
+        padding: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .option-item {
+        border: 1px solid #94a3b8 !important;
+        background: white !important;
+        color: black !important;
+      }
+      .answer-feedback {
+        display: none !important;
+      }
+      .fill-blank-input {
+        border-bottom: 1.5px dashed #000 !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        background: transparent !important;
+        width: 140px !important;
+      }
+      .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body class="text-slate-800 min-h-screen pb-16">
+
+  <header class="no-print bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-indigo-100 shadow-sm py-3 px-4 sm:px-8">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl animate-short-bounce">🇳🇵</span>
+        <div>
+          <h1 class="heading-font text-lg sm:text-xl font-bold text-indigo-900 tracking-wide">Primary English Practice • Class 2</h1>
+          <p class="text-xs text-indigo-600 font-semibold">Nepal Curriculum Textbook Units 1 to 14</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          Print Worksheet
+        </button>
+        <button onclick="resetExam()" class="px-3.5 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-sm font-bold flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          Reset
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 mt-6">
+    <section class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border-2 border-indigo-100 relative overflow-hidden mb-8">
+      <div class="absolute -right-8 -top-8 w-32 h-32 bg-amber-100 rounded-full opacity-50 pointer-events-none"></div>
+      <div class="absolute -left-6 -bottom-6 w-24 h-24 bg-sky-100 rounded-full opacity-60 pointer-events-none"></div>
+
+      <!-- Nepali School Header Layout -->
+      <div class="text-center pb-5 border-b-2 border-dashed border-indigo-100">
+        <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full mb-2 tracking-wide uppercase">
+          Continuous Assessment Exam • Second Term
+        </span>
+        <h2 class="heading-font text-2xl sm:text-3xl font-extrabold text-indigo-950">
+          Shree Saraswati English Boarding School
+        </h2>
+        <p class="text-sm text-slate-500 font-semibold">Kathmandu / Pokhara, Nepal</p>
+        <h3 class="heading-font text-lg text-emerald-700 font-bold mt-1">
+          Subject: English Grammar (Class 2)
+        </h3>
+      </div>
+
+      <!-- Student Credentials and Marks Header -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-5 text-sm">
+        <div class="bg-indigo-50/70 p-3 rounded-2xl">
+          <label class="block text-xs font-bold text-indigo-600 uppercase">Student Name:</label>
+          <input type="text" id="studentName" placeholder="Aayush Sharma" class="w-full bg-transparent border-b border-indigo-300 font-bold text-indigo-950 focus:outline-none focus:border-indigo-600 mt-1" />
+        </div>
+        <div class="bg-indigo-50/70 p-3 rounded-2xl">
+          <label class="block text-xs font-bold text-indigo-600 uppercase">Roll No.:</label>
+          <input type="text" id="rollNo" placeholder="12" class="w-full bg-transparent border-b border-indigo-300 font-bold text-indigo-950 focus:outline-none focus:border-indigo-600 mt-1" />
+        </div>
+        <div class="bg-amber-50 p-3 rounded-2xl">
+          <span class="block text-xs font-bold text-amber-700 uppercase">Total Marks:</span>
+          <span class="text-base font-extrabold text-amber-950">50 Marks</span>
+        </div>
+        <div class="bg-emerald-50 p-3 rounded-2xl">
+          <span class="block text-xs font-bold text-emerald-700 uppercase">Time Allotted:</span>
+          <span class="text-base font-extrabold text-emerald-950">1 Hour</span>
+        </div>
+      </div>
+
+      <!-- Unit Coverage Badge List -->
+      <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-1.5 text-[11px] text-slate-500 font-semibold">
+        <span class="text-indigo-600 font-bold">Tested Topics (Units 1 - 14):</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">1. Alphabet</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">2. Nouns</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">3. A/An</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">4. Countable/Uncountable</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">5. Singular/Plural</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">6. This/That/These/Those</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">7. Pronouns</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">8. Object Pronouns</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">9. Is/Am/Are</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">10. Possessives</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">11. Apostrophe ('s)</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">12. Has/Have</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">13. Questions</span>
+        <span class="bg-slate-100 px-2 py-0.5 rounded-md">14. Adjectives</span>
+      </div>
+    </section>
+
+    <section class="space-y-6 mb-10">
+      <div class="flex items-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 rounded-2xl shadow-sm">
+        <span class="w-8 h-8 rounded-full bg-white text-blue-700 font-extrabold flex items-center justify-center text-lg">A</span>
+        <div>
+          <h2 class="heading-font text-lg font-bold">Section A: Choose the Correct Answer (14 Marks)</h2>
+          <p class="text-xs text-blue-100 font-medium">Read each sentence carefully and click the best answer.</p>
+        </div>
+      </div>
+
+      <!-- Q1: Unit 1 - Alphabet -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q1" data-answer="E">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">1.</span> Which of the following letters is a <span class="text-indigo-600 underline decoration-indigo-400 font-extrabold">vowel</span>?
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 1: Alphabet]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q1', 'B', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) B</button>
+          <button type="button" onclick="selectOption('q1', 'D', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) D</button>
+          <button type="button" onclick="selectOption('q1', 'E', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) E</button>
+          <button type="button" onclick="selectOption('q1', 'G', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">D) G</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q2: Unit 2 - Nouns -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q2" data-answer="Pokhara">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">2.</span> Which word is a noun that names a beautiful <span class="text-indigo-600 font-extrabold">Place in Nepal</span>?
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 2: Nouns]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q2', 'Jump', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) Jump</button>
+          <button type="button" onclick="selectOption('q2', 'Pokhara', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) Pokhara</button>
+          <button type="button" onclick="selectOption('q2', 'Fast', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) Fast</button>
+          <button type="button" onclick="selectOption('q2', 'Sing', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">D) Sing</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q3: Unit 3 - A or An -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q3" data-answer="an">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">3.</span> Sita saw ________ big umbrella on a rainy day in Kathmandu.
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 3: A or an]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1 italic">Choose article before the word "umbrella": It is ________ umbrella. ☂️</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q3', 'a', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) a umbrella</button>
+          <button type="button" onclick="selectOption('q3', 'an', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) an umbrella</button>
+          <button type="button" onclick="selectOption('q3', 'two', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) those umbrella</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q4: Unit 4 - Countable and Uncountable -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q4" data-answer="Milk">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">4.</span> Which of these things is <span class="text-indigo-600 font-extrabold underline decoration-indigo-300">uncountable</span> (we cannot count 1, 2, 3...)?
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 4: Countable and uncountable]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q4', 'Book', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) Book 📖</button>
+          <button type="button" onclick="selectOption('q4', 'Pencil', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) Pencil ✏️</button>
+          <button type="button" onclick="selectOption('q4', 'Milk', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) Milk 🥛</button>
+          <button type="button" onclick="selectOption('q4', 'Apple', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">D) Apple 🍎</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q5: Unit 5 - Singular and Plural -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q5" data-answer="boxes">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">5.</span> What is the plural of <span class="font-extrabold text-indigo-600">"box"</span>?
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 5: Singular and plural]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q5', 'boxs', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) boxs</button>
+          <button type="button" onclick="selectOption('q5', 'boxes', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) boxes</button>
+          <button type="button" onclick="selectOption('q5', 'boxen', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) boxies</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q6: Unit 6 - This, that, these, those -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q6" data-answer="These">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">6.</span> (Near to hands) ________ are delicious Nepali momos on my plate.
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 6: This, that, these, those]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q6', 'This', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) This</button>
+          <button type="button" onclick="selectOption('q6', 'These', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) These</button>
+          <button type="button" onclick="selectOption('q6', 'That', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) That</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q7: Unit 7 - Pronouns -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q7" data-answer="She">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">7.</span> Anu is reading a story book. ________ is a good student.
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 7: Pronouns]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q7', 'He', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) He</button>
+          <button type="button" onclick="selectOption('q7', 'She', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) She</button>
+          <button type="button" onclick="selectOption('q7', 'It', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) It</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q8: Unit 8 - Me, us, you, him, her -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q8" data-answer="him">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">8.</span> Ram is thirsty. Please give ________ a glass of clean water.
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 8: Me, us, you, him, her]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q8', 'her', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) her</button>
+          <button type="button" onclick="selectOption('q8', 'him', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) him</button>
+          <button type="button" onclick="selectOption('q8', 'us', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) us</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q9: Unit 9 - Is, am, are -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q9" data-answer="am">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">9.</span> I ________ proud to live in Nepal. 🇳🇵
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 9: Is, am, are]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q9', 'is', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) is</button>
+          <button type="button" onclick="selectOption('q9', 'am', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) am</button>
+          <button type="button" onclick="selectOption('q9', 'are', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) are</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q10: Unit 10 - Possessive -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q10" data-answer="My">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">10.</span> I have a new bag. ________ bag is blue.
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 10: Possessive]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q10', 'My', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) My</button>
+          <button type="button" onclick="selectOption('q10', 'His', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) His</button>
+          <button type="button" onclick="selectOption('q10', 'Their', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) Their</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q11: Unit 11 - Apostrophe ('s) -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q11" data-answer="Rohan's ball">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">11.</span> The football belongs to Rohan. It is ________.
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 11: Apostrophe ('s)]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q11', 'Rohans ball', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) Rohans ball</button>
+          <button type="button" onclick="selectOption('q11', 'Rohan\'s ball', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) Rohan's ball</button>
+          <button type="button" onclick="selectOption('q11', 'Ball Rohan', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) Ball Rohan</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q12: Unit 12 - Has, have -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q12" data-answer="has">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">12.</span> An elephant ________ a long trunk. 🐘
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 12: Has, have]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-2 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q12', 'has', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) has</button>
+          <button type="button" onclick="selectOption('q12', 'have', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) have</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q13: Unit 13 - Question words -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q13" data-answer="Where">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">13.</span> "________ do you live?" — "I live in Butwal, Nepal."
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 13: Questions]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q13', 'Where', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) Where</button>
+          <button type="button" onclick="selectOption('q13', 'Who', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) Who</button>
+          <button type="button" onclick="selectOption('q13', 'What', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) When</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Q14: Unit 14 - Adjectives -->
+      <div class="question-card bg-white p-5 rounded-2xl border border-indigo-100 shadow-sm" data-qid="q14" data-answer="tall">
+        <div class="flex items-start justify-between gap-2">
+          <p class="font-bold text-slate-800 text-base">
+            <span class="text-indigo-600 mr-1.5">14.</span> Mount Everest is a very ________ mountain. 🏔️
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 14: Adjectives]</span>
+          </p>
+          <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">1 Mark</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('q14', 'tall', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">A) tall</button>
+          <button type="button" onclick="selectOption('q14', 'climb', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">B) climb</button>
+          <button type="button" onclick="selectOption('q14', 'walk', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-indigo-400">C) run</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+    </section>
+
+    <section class="space-y-6 mb-10">
+      <div class="flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-4 rounded-2xl shadow-sm">
+        <span class="w-8 h-8 rounded-full bg-white text-emerald-700 font-extrabold flex items-center justify-center text-lg">B</span>
+        <div>
+          <h2 class="heading-font text-lg font-bold">Section B: Fill in the Blanks (12 Marks)</h2>
+          <p class="text-xs text-emerald-100 font-medium">Use the correct word to complete each sentence.</p>
+        </div>
+      </div>
+
+      <!-- Helpful Word Box for Grade 2 -->
+      <div class="bg-emerald-50/80 border-2 border-dashed border-emerald-200 rounded-2xl p-4 text-center">
+        <span class="text-xs font-bold uppercase text-emerald-800 tracking-wider">🌟 Helpful Word Bank 🌟</span>
+        <div class="flex flex-wrap justify-center gap-2 mt-2 font-bold text-emerald-900 text-sm">
+          <span class="bg-white px-3 py-1 rounded-full shadow-sm">a</span>
+          <span class="bg-white px-3 py-1 rounded-full shadow-sm">children</span>
+          <span class="bg-white px-3 py-1 rounded-full shadow-sm">are</span>
+          <span class="bg-white px-3 py-1 rounded-full shadow-sm">have</span>
+          <span class="bg-white px-3 py-1 rounded-full shadow-sm">her</span>
+          <span class="bg-white px-3 py-1 rounded-full shadow-sm">sweet</span>
+        </div>
+      </div>
+
+      <!-- Fill in the blank items -->
+      <div class="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm space-y-5">
+        <!-- B1 (Unit 3 - a / an) -->
+        <div class="question-card flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100" data-qid="fb1" data-answer="a">
+          <label class="text-base font-bold text-slate-800">
+            <span class="text-emerald-600">1.</span> Danfe is <input type="text" id="fb1" placeholder="a / an" class="fill-blank-input text-center font-bold px-3 py-1 mx-1.5 w-24 bg-slate-50 border-2 border-emerald-200 rounded-lg text-emerald-950 focus:bg-white focus:outline-none focus:border-emerald-500" /> beautiful national bird of Nepal. (a / an)
+          </label>
+          <span class="text-xs font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded self-start sm:self-center">2 Marks</span>
+          <div class="answer-feedback text-xs font-bold w-full hidden"></div>
+        </div>
+
+        <!-- B2 (Unit 5 - Singular and Plural) -->
+        <div class="question-card flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100" data-qid="fb2" data-answer="children">
+          <label class="text-base font-bold text-slate-800">
+            <span class="text-emerald-600">2.</span> One child is smiling, but three <input type="text" id="fb2" placeholder="child / children" class="fill-blank-input text-center font-bold px-3 py-1 mx-1.5 w-32 bg-slate-50 border-2 border-emerald-200 rounded-lg text-emerald-950 focus:bg-white focus:outline-none focus:border-emerald-500" /> are playing in the school field.
+          </label>
+          <span class="text-xs font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded self-start sm:self-center">2 Marks</span>
+          <div class="answer-feedback text-xs font-bold w-full hidden"></div>
+        </div>
+
+        <!-- B3 (Unit 9 - Is, am, are) -->
+        <div class="question-card flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100" data-qid="fb3" data-answer="are">
+          <label class="text-base font-bold text-slate-800">
+            <span class="text-emerald-600">3.</span> The birds <input type="text" id="fb3" placeholder="is / are" class="fill-blank-input text-center font-bold px-3 py-1 mx-1.5 w-24 bg-slate-50 border-2 border-emerald-200 rounded-lg text-emerald-950 focus:bg-white focus:outline-none focus:border-emerald-500" /> singing high up in the green trees.
+          </label>
+          <span class="text-xs font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded self-start sm:self-center">2 Marks</span>
+          <div class="answer-feedback text-xs font-bold w-full hidden"></div>
+        </div>
+
+        <!-- B4 (Unit 12 - Has, have) -->
+        <div class="question-card flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100" data-qid="fb4" data-answer="have">
+          <label class="text-base font-bold text-slate-800">
+            <span class="text-emerald-600">4.</span> We <input type="text" id="fb4" placeholder="has / have" class="fill-blank-input text-center font-bold px-3 py-1 mx-1.5 w-24 bg-slate-50 border-2 border-emerald-200 rounded-lg text-emerald-950 focus:bg-white focus:outline-none focus:border-emerald-500" /> many colorful pencils in our classroom.
+          </label>
+          <span class="text-xs font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded self-start sm:self-center">2 Marks</span>
+          <div class="answer-feedback text-xs font-bold w-full hidden"></div>
+        </div>
+
+        <!-- B5 (Unit 8 - Me, us, you, him, her) -->
+        <div class="question-card flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100" data-qid="fb5" data-answer="her">
+          <label class="text-base font-bold text-slate-800">
+            <span class="text-emerald-600">5.</span> Bina lost her eraser. Can you please help <input type="text" id="fb5" placeholder="her / him" class="fill-blank-input text-center font-bold px-3 py-1 mx-1.5 w-24 bg-slate-50 border-2 border-emerald-200 rounded-lg text-emerald-950 focus:bg-white focus:outline-none focus:border-emerald-500" /> find it?
+          </label>
+          <span class="text-xs font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded self-start sm:self-center">2 Marks</span>
+          <div class="answer-feedback text-xs font-bold w-full hidden"></div>
+        </div>
+
+        <!-- B6 (Unit 14 - Adjectives) -->
+        <div class="question-card flex flex-col sm:flex-row sm:items-center justify-between gap-3" data-qid="fb6" data-answer="sweet">
+          <label class="text-base font-bold text-slate-800">
+            <span class="text-emerald-600">6.</span> Ripe Nepali mangoes are very <input type="text" id="fb6" placeholder="sweet / sour" class="fill-blank-input text-center font-bold px-3 py-1 mx-1.5 w-28 bg-slate-50 border-2 border-emerald-200 rounded-lg text-emerald-950 focus:bg-white focus:outline-none focus:border-emerald-500" /> and juicy. 🥭
+          </label>
+          <span class="text-xs font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded self-start sm:self-center">2 Marks</span>
+          <div class="answer-feedback text-xs font-bold w-full hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-6 mb-10">
+      <div class="flex items-center gap-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 rounded-2xl shadow-sm">
+        <span class="w-8 h-8 rounded-full bg-white text-purple-700 font-extrabold flex items-center justify-center text-lg">C</span>
+        <div>
+          <h2 class="heading-font text-lg font-bold">Section C: Sorting & Classifying (12 Marks)</h2>
+          <p class="text-xs text-purple-100 font-medium">Test your skills in alphabet order, countable nouns, and demonstratives.</p>
+        </div>
+      </div>
+
+      <!-- Task C1: Alphabetical Order (Unit 1) -->
+      <div class="question-card bg-white p-6 rounded-2xl border border-purple-100 shadow-sm" data-qid="sort_alpha" data-answer="Apple,Cat,Danfe,Yak">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-slate-800">
+            <span class="text-purple-600 mr-1.5">1.</span> Arrange these 4 words in <span class="text-purple-600 font-extrabold">Alphabetical Order (A to Z)</span>:
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 1: Alphabet]</span>
+          </h3>
+          <span class="text-xs font-bold bg-purple-50 text-purple-700 px-2 py-0.5 rounded">4 Marks</span>
+        </div>
+
+        <div class="mt-3 flex flex-wrap gap-2 text-sm font-bold text-slate-600 bg-purple-50/50 p-3 rounded-xl border border-purple-100">
+          <span>Words to arrange:</span>
+          <span class="bg-white px-2 py-0.5 rounded shadow-xs text-purple-900">Yak</span>
+          <span class="bg-white px-2 py-0.5 rounded shadow-xs text-purple-900">Apple</span>
+          <span class="bg-white px-2 py-0.5 rounded shadow-xs text-purple-900">Cat</span>
+          <span class="bg-white px-2 py-0.5 rounded shadow-xs text-purple-900">Danfe</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+          <div>
+            <label class="text-xs font-bold text-slate-400 block mb-1">1st Word:</label>
+            <input type="text" id="alpha1" placeholder="1st" class="fill-blank-input w-full p-2.5 text-center font-bold bg-slate-50 border-2 border-purple-100 rounded-xl text-purple-950 focus:bg-white focus:border-purple-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-400 block mb-1">2nd Word:</label>
+            <input type="text" id="alpha2" placeholder="2nd" class="fill-blank-input w-full p-2.5 text-center font-bold bg-slate-50 border-2 border-purple-100 rounded-xl text-purple-950 focus:bg-white focus:border-purple-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-400 block mb-1">3rd Word:</label>
+            <input type="text" id="alpha3" placeholder="3rd" class="fill-blank-input w-full p-2.5 text-center font-bold bg-slate-50 border-2 border-purple-100 rounded-xl text-purple-950 focus:bg-white focus:border-purple-400 focus:outline-none" />
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-400 block mb-1">4th Word:</label>
+            <input type="text" id="alpha4" placeholder="4th" class="fill-blank-input w-full p-2.5 text-center font-bold bg-slate-50 border-2 border-purple-100 rounded-xl text-purple-950 focus:bg-white focus:border-purple-400 focus:outline-none" />
+          </div>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Task C2: Countable vs Uncountable (Unit 4) -->
+      <div class="question-card bg-white p-6 rounded-2xl border border-purple-100 shadow-sm" data-qid="c_count" data-answer="Countable:Uncountable:Countable:Uncountable">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-slate-800">
+            <span class="text-purple-600 mr-1.5">2.</span> Tap <span class="text-purple-600 font-extrabold">"Countable"</span> or <span class="text-purple-600 font-extrabold">"Uncountable"</span> for each item:
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 4: Countable & Uncountable]</span>
+          </h3>
+          <span class="text-xs font-bold bg-purple-50 text-purple-700 px-2 py-0.5 rounded">4 Marks</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+          <!-- Item 1 -->
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <span class="font-bold text-slate-700">1. Pencil ✏️</span>
+            <div class="flex gap-1.5">
+              <button type="button" onclick="setClassifier('cnt1', 'Countable', this)" class="classifier-btn cnt1 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Countable</button>
+              <button type="button" onclick="setClassifier('cnt1', 'Uncountable', this)" class="classifier-btn cnt1 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Uncountable</button>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <span class="font-bold text-slate-700">2. Water 💧</span>
+            <div class="flex gap-1.5">
+              <button type="button" onclick="setClassifier('cnt2', 'Countable', this)" class="classifier-btn cnt2 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Countable</button>
+              <button type="button" onclick="setClassifier('cnt2', 'Uncountable', this)" class="classifier-btn cnt2 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Uncountable</button>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <span class="font-bold text-slate-700">3. Ball ⚽</span>
+            <div class="flex gap-1.5">
+              <button type="button" onclick="setClassifier('cnt3', 'Countable', this)" class="classifier-btn cnt3 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Countable</button>
+              <button type="button" onclick="setClassifier('cnt3', 'Uncountable', this)" class="classifier-btn cnt3 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Uncountable</button>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <span class="font-bold text-slate-700">4. Rice 🍚</span>
+            <div class="flex gap-1.5">
+              <button type="button" onclick="setClassifier('cnt4', 'Countable', this)" class="classifier-btn cnt4 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Countable</button>
+              <button type="button" onclick="setClassifier('cnt4', 'Uncountable', this)" class="classifier-btn cnt4 px-3 py-1 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-purple-50">Uncountable</button>
+            </div>
+          </div>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- Task C3: Singular to Plural Match (Unit 5) -->
+      <div class="question-card bg-white p-6 rounded-2xl border border-purple-100 shadow-sm" data-qid="plural_match" data-answer="buses:mangoes:babies:leaves">
+        <div class="flex items-center justify-between">
+          <h3 class="font-bold text-slate-800">
+            <span class="text-purple-600 mr-1.5">3.</span> Write the <span class="text-purple-600 font-extrabold">Plural Form</span> of these words:
+            <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 5: Singular and plural]</span>
+          </h3>
+          <span class="text-xs font-bold bg-purple-50 text-purple-700 px-2 py-0.5 rounded">4 Marks</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
+            <span class="text-sm font-bold text-slate-700 block mb-1">Bus 🚌</span>
+            <input type="text" id="plu1" placeholder="e.g. buses" class="fill-blank-input w-full p-2 text-center text-sm font-bold bg-white border border-slate-300 rounded-lg focus:border-purple-500 focus:outline-none" />
+          </div>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
+            <span class="text-sm font-bold text-slate-700 block mb-1">Mango 🥭</span>
+            <input type="text" id="plu2" placeholder="e.g. mangoes" class="fill-blank-input w-full p-2 text-center text-sm font-bold bg-white border border-slate-300 rounded-lg focus:border-purple-500 focus:outline-none" />
+          </div>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
+            <span class="text-sm font-bold text-slate-700 block mb-1">Baby 👶</span>
+            <input type="text" id="plu3" placeholder="e.g. babies" class="fill-blank-input w-full p-2 text-center text-sm font-bold bg-white border border-slate-300 rounded-lg focus:border-purple-500 focus:outline-none" />
+          </div>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
+            <span class="text-sm font-bold text-slate-700 block mb-1">Leaf 🍃</span>
+            <input type="text" id="plu4" placeholder="e.g. leaves" class="fill-blank-input w-full p-2 text-center text-sm font-bold bg-white border border-slate-300 rounded-lg focus:border-purple-500 focus:outline-none" />
+          </div>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+    </section>
+
+    <section class="space-y-6 mb-12">
+      <div class="flex items-center gap-3 bg-gradient-to-r from-amber-500 to-rose-500 text-white p-4 rounded-2xl shadow-sm">
+        <span class="w-8 h-8 rounded-full bg-white text-amber-600 font-extrabold flex items-center justify-center text-lg">D</span>
+        <div>
+          <h2 class="heading-font text-lg font-bold">Section D: Questions & Descriptions (12 Marks)</h2>
+          <p class="text-xs text-amber-100 font-medium">Show mastery of Questions (Unit 13), Apostrophes (Unit 11), & Adjectives (Unit 14).</p>
+        </div>
+      </div>
+
+      <!-- D1: Question Formation (Unit 13) -->
+      <div class="question-card bg-white p-6 rounded-2xl border border-amber-100 shadow-sm" data-qid="secD_q1" data-answer="What is your name?">
+        <div class="flex items-start justify-between">
+          <div>
+            <h3 class="font-bold text-slate-800">
+              <span class="text-amber-600 mr-1.5">1.</span> Rearrange these words to form a correct <span class="text-amber-600 font-extrabold">Question</span> with a question mark ( ? ):
+            </h3>
+            <p class="text-xs text-slate-500 font-semibold mt-1">Words: [ name / is / What / your / ? ]</p>
+          </div>
+          <span class="text-xs font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded">4 Marks</span>
+        </div>
+        <div class="mt-3">
+          <input type="text" id="dq1_ans" placeholder="Type the complete question here..." class="fill-blank-input w-full p-3 font-bold bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-amber-400 focus:bg-white focus:outline-none" />
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- D2: Apostrophe of Possession (Unit 11) -->
+      <div class="question-card bg-white p-6 rounded-2xl border border-amber-100 shadow-sm" data-qid="secD_q2" data-answer="mother's sari">
+        <div class="flex items-start justify-between">
+          <div>
+            <h3 class="font-bold text-slate-800">
+              <span class="text-amber-600 mr-1.5">2.</span> Rewrite using an <span class="text-amber-600 font-extrabold">Apostrophe ('s)</span>:
+            </h3>
+            <p class="text-sm font-semibold text-slate-700 mt-1">Example: The bag of Hari &rarr; <span class="text-amber-600 font-bold">Hari's bag</span></p>
+            <p class="text-sm font-bold text-slate-900 mt-1">"The red sari of mother" &rarr; It is ________.</p>
+          </div>
+          <span class="text-xs font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded">4 Marks</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
+          <button type="button" onclick="selectOption('secD_q2', 'mother sari', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-amber-400">A) mother sari</button>
+          <button type="button" onclick="selectOption('secD_q2', 'mother\'s sari', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-amber-400">B) mother's sari</button>
+          <button type="button" onclick="selectOption('secD_q2', 'mothers\' sari', this)" class="option-card option-item p-3 border-2 border-slate-200 rounded-xl text-center font-bold text-slate-700 hover:border-amber-400">C) sari's mother</button>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+
+      <!-- D3: Match Opposites / Adjectives (Unit 14) -->
+      <div class="question-card bg-white p-6 rounded-2xl border border-amber-100 shadow-sm" data-qid="secD_q3" data-answer="cold:sad:slow:small">
+        <div class="flex items-start justify-between">
+          <div>
+            <h3 class="font-bold text-slate-800">
+              <span class="text-amber-600 mr-1.5">3.</span> Match each <span class="text-amber-600 font-extrabold">Adjective</span> with its Opposite:
+              <span class="block text-xs text-slate-400 font-medium mt-0.5">[Unit 14: Adjectives]</span>
+            </h3>
+          </div>
+          <span class="text-xs font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded">4 Marks</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-100 text-center">
+            <span class="text-xs font-extrabold text-amber-800 block mb-1">Hot 🔥</span>
+            <select id="adj_opp1" class="w-full bg-white border border-amber-200 rounded-lg p-1.5 text-xs font-bold text-slate-800 focus:outline-none">
+              <option value="">Select...</option>
+              <option value="cold">cold</option>
+              <option value="small">small</option>
+              <option value="sad">sad</option>
+              <option value="slow">slow</option>
+            </select>
+          </div>
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-100 text-center">
+            <span class="text-xs font-extrabold text-amber-800 block mb-1">Happy 😊</span>
+            <select id="adj_opp2" class="w-full bg-white border border-amber-200 rounded-lg p-1.5 text-xs font-bold text-slate-800 focus:outline-none">
+              <option value="">Select...</option>
+              <option value="sad">sad</option>
+              <option value="cold">cold</option>
+              <option value="slow">slow</option>
+              <option value="small">small</option>
+            </select>
+          </div>
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-100 text-center">
+            <span class="text-xs font-extrabold text-amber-800 block mb-1">Fast 🐆</span>
+            <select id="adj_opp3" class="w-full bg-white border border-amber-200 rounded-lg p-1.5 text-xs font-bold text-slate-800 focus:outline-none">
+              <option value="">Select...</option>
+              <option value="slow">slow</option>
+              <option value="cold">cold</option>
+              <option value="small">small</option>
+              <option value="sad">sad</option>
+            </select>
+          </div>
+          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-100 text-center">
+            <span class="text-xs font-extrabold text-amber-800 block mb-1">Big 🐘</span>
+            <select id="adj_opp4" class="w-full bg-white border border-amber-200 rounded-lg p-1.5 text-xs font-bold text-slate-800 focus:outline-none">
+              <option value="">Select...</option>
+              <option value="small">small</option>
+              <option value="slow">slow</option>
+              <option value="cold">cold</option>
+              <option value="sad">sad</option>
+            </select>
+          </div>
+        </div>
+        <div class="answer-feedback text-xs font-bold mt-2 hidden"></div>
+      </div>
+    </section>
+
+    <div class="no-print bg-white p-6 rounded-3xl border-2 border-indigo-200 shadow-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="heading-font text-xl font-black text-indigo-950">Ready to Check Your Work?</h3>
+        <p class="text-xs text-slate-500 font-semibold mt-0.5">Click submit to see your marks, gold stars, and Nepali teacher comments!</p>
+      </div>
+      <div class="flex items-center gap-3 w-full sm:w-auto">
+        <button onclick="submitExam()" class="flex-1 sm:flex-initial px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-2xl font-extrabold shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2">
+          <span>🌟 Submit Test & Get Marks</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Student Score Report Card (Displays after submit) -->
+    <div id="resultModal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full text-center shadow-2xl border-4 border-amber-300 relative animate-in fade-in zoom-in duration-200">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+
+        <div id="badgeIcon" class="text-6xl mb-2 animate-bounce">🏆</div>
+        <h3 id="resultTitle" class="heading-font text-2xl sm:text-3xl font-extrabold text-indigo-950">Shabash! Excellent Work!</h3>
+        <p id="studentGreeting" class="text-sm font-bold text-slate-600 mt-1"></p>
+
+        <!-- Score Box -->
+        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-5 my-5">
+          <p class="text-xs font-extrabold uppercase tracking-widest text-amber-700">Total Score Obtained</p>
+          <div class="flex items-center justify-center gap-2 mt-1">
+            <span id="finalScore" class="heading-font text-5xl font-black text-amber-600">48</span>
+            <span class="text-2xl font-bold text-slate-400">/ 50</span>
+          </div>
+          <div class="w-full bg-amber-200 rounded-full h-3 mt-3 overflow-hidden">
+            <div id="scoreBar" class="bg-amber-500 h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <p id="nepaliFeedback" class="text-sm font-bold text-indigo-900 bg-indigo-50 p-3 rounded-xl border border-indigo-100"></p>
+
+        <div class="flex items-center justify-center gap-3 mt-6">
+          <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 font-bold text-slate-700 text-sm">
+            Review Questions
+          </button>
+          <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 font-bold text-white text-sm flex items-center gap-2 shadow">
+            🖨️ Print Certificate / Paper
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Audio synthesis using browser Web Audio API (Zero external audio file dependencies)
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playTone(freq, type = 'sine', duration = 0.15, delay = 0) {
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime + delay);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + delay + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(audioCtx.currentTime + delay);
+        osc.stop(audioCtx.currentTime + delay + duration);
+      } catch (e) {
+        // Audio fallback
+      }
+    }
+
+    function playSuccessChime() {
+      playTone(523.25, 'triangle', 0.1, 0);       // C5
+      playTone(659.25, 'triangle', 0.12, 0.08);   // E5
+      playTone(783.99, 'triangle', 0.18, 0.16);   // G5
+      playTone(1046.50, 'triangle', 0.35, 0.24);  // C6
+    }
+
+    function playSoftBoing() {
+      playTone(260, 'sawtooth', 0.18, 0);
+      playTone(200, 'sine', 0.25, 0.1);
+    }
+
+    // State of user selections
+    const userSelections = {};
+
+    function selectOption(qid, choice, btnElement) {
+      userSelections[qid] = choice;
+      const parent = btnElement.closest('.question-card');
+      if (parent) {
+        const buttons = parent.querySelectorAll('.option-card');
+        buttons.forEach(b => b.classList.remove('selected', 'border-indigo-600', 'bg-indigo-50'));
+        btnElement.classList.add('selected', 'border-indigo-600', 'bg-indigo-50');
+      }
+      playTone(440, 'sine', 0.08);
+    }
+
+    function setClassifier(key, value, btnElement) {
+      userSelections[key] = value;
+      const parentRow = btnElement.parentElement;
+      const buttons = parentRow.querySelectorAll('button');
+      buttons.forEach(b => {
+        b.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+        b.classList.add('bg-white', 'text-slate-800');
+      });
+      btnElement.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
+      btnElement.classList.remove('bg-white');
+      playTone(493.88, 'sine', 0.08);
+    }
+
+    // Confetti celebration animation
+    function triggerConfetti() {
+      const colors = ['#f59e0b', '#10b981', '#3b82f6', '#ec4899', '#8b5cf6'];
+      for (let i = 0; i < 60; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = '-10px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        document.body.appendChild(confetti);
+
+        const duration = Math.random() * 2 + 1.5;
+        confetti.animate([
+          { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+          { transform: `translate(${Math.random() * 200 - 100}px, 100vh) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+        ], {
+          duration: duration * 1000,
+          easing: 'cubic-bezier(0.25, 1, 0.5, 1)'
+        }).onfinish = () => confetti.remove();
+      }
+    }
+
+    // Main Exam Evaluation Logic
+    function submitExam() {
+      initAudio();
+      let totalMarks = 0;
+
+      // Helper to display badge
+      function setCardFeedback(card, isCorrect, correctText) {
+        const feedbackEl = card.querySelector('.answer-feedback');
+        if (feedbackEl) {
+          feedbackEl.classList.remove('hidden');
+          if (isCorrect) {
+            feedbackEl.className = 'answer-feedback text-xs font-bold mt-2 text-emerald-600 flex items-center gap-1';
+            feedbackEl.innerHTML = '<span>✅ Correct! Well done.</span>';
+          } else {
+            feedbackEl.className = 'answer-feedback text-xs font-bold mt-2 text-rose-600 flex items-center gap-1';
+            feedbackEl.innerHTML = `<span>❌ Correct answer is: <strong>${correctText}</strong></span>`;
+          }
+        }
+      }
+
+      // 1. Evaluate Section A (14 Questions * 1 Mark each = 14 Marks)
+      const secAKeys = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14'];
+      secAKeys.forEach(qid => {
+        const card = document.querySelector(`[data-qid="${qid}"]`);
+        const correct = card.getAttribute('data-answer');
+        const userChoice = userSelections[qid];
+        if (userChoice && userChoice.toLowerCase() === correct.toLowerCase()) {
+          totalMarks += 1;
+          setCardFeedback(card, true);
+        } else {
+          setCardFeedback(card, false, correct);
+        }
+      });
+
+      // 2. Evaluate Section B (6 Fill in the Blanks * 2 Marks each = 12 Marks)
+      const fillBlanks = [
+        { id: 'fb1', ans: 'a' },
+        { id: 'fb2', ans: 'children' },
+        { id: 'fb3', ans: 'are' },
+        { id: 'fb4', ans: 'have' },
+        { id: 'fb5', ans: 'her' },
+        { id: 'fb6', ans: 'sweet' }
+      ];
+
+      fillBlanks.forEach(item => {
+        const card = document.querySelector(`[data-qid="${item.id}"]`);
+        const inputVal = (document.getElementById(item.id).value || '').trim().toLowerCase();
+        if (inputVal === item.ans.toLowerCase()) {
+          totalMarks += 2;
+          setCardFeedback(card, true);
+        } else {
+          setCardFeedback(card, false, item.ans);
+        }
+      });
+
+      // 3. Evaluate Section C (3 Tasks * 4 Marks each = 12 Marks)
+      // C1: Alphabetical Order (Apple, Cat, Danfe, Yak)
+      const a1 = (document.getElementById('alpha1').value || '').trim().toLowerCase();
+      const a2 = (document.getElementById('alpha2').value || '').trim().toLowerCase();
+      const a3 = (document.getElementById('alpha3').value || '').trim().toLowerCase();
+      const a4 = (document.getElementById('alpha4').value || '').trim().toLowerCase();
+      const cardAlpha = document.querySelector(`[data-qid="sort_alpha"]`);
+
+      let c1Score = 0;
+      if (a1 === 'apple') c1Score += 1;
+      if (a2 === 'cat') c1Score += 1;
+      if (a3 === 'danfe') c1Score += 1;
+      if (a4 === 'yak') c1Score += 1;
+      totalMarks += c1Score;
+      setCardFeedback(cardAlpha, c1Score === 4, 'Apple, Cat, Danfe, Yak');
+
+      // C2: Countable vs Uncountable (Pencil=C, Water=U, Ball=C, Rice=U)
+      const cardCount = document.querySelector(`[data-qid="c_count"]`);
+      let c2Score = 0;
+      if (userSelections['cnt1'] === 'Countable') c2Score += 1;
+      if (userSelections['cnt2'] === 'Uncountable') c2Score += 1;
+      if (userSelections['cnt3'] === 'Countable') c2Score += 1;
+      if (userSelections['cnt4'] === 'Uncountable') c2Score += 1;
+      totalMarks += c2Score;
+      setCardFeedback(cardCount, c2Score === 4, '1.Countable, 2.Uncountable, 3.Countable, 4.Uncountable');
+
+      // C3: Plural Form (buses, mangoes, babies, leaves)
+      const plu1 = (document.getElementById('plu1').value || '').trim().toLowerCase();
+      const plu2 = (document.getElementById('plu2').value || '').trim().toLowerCase();
+      const plu3 = (document.getElementById('plu3').value || '').trim().toLowerCase();
+      const plu4 = (document.getElementById('plu4').value || '').trim().toLowerCase();
+      const cardPlural = document.querySelector(`[data-qid="plural_match"]`);
+
+      let c3Score = 0;
+      if (plu1 === 'buses') c3Score += 1;
+      if (plu2 === 'mangoes' || plu2 === 'mangos') c3Score += 1;
+      if (plu3 === 'babies') c3Score += 1;
+      if (plu4 === 'leaves') c3Score += 1;
+      totalMarks += c3Score;
+      setCardFeedback(cardPlural, c3Score === 4, 'buses, mangoes, babies, leaves');
+
+      // 4. Evaluate Section D (3 Tasks * 4 Marks each = 12 Marks)
+      // D1: What is your name?
+      const dq1Val = (document.getElementById('dq1_ans').value || '').trim().toLowerCase().replace(/\s+/g, ' ');
+      const cardD1 = document.querySelector(`[data-qid="secD_q1"]`);
+      const isD1Correct = (dq1Val === 'what is your name?' || dq1Val === 'what is your name');
+      if (isD1Correct) {
+        totalMarks += 4;
+        setCardFeedback(cardD1, true);
+      } else {
+        setCardFeedback(cardD1, false, 'What is your name?');
+      }
+
+      // D2: mother's sari
+      const cardD2 = document.querySelector(`[data-qid="secD_q2"]`);
+      if (userSelections['secD_q2'] === "mother's sari") {
+        totalMarks += 4;
+        setCardFeedback(cardD2, true);
+      } else {
+        setCardFeedback(cardD2, false, "mother's sari");
+      }
+
+      // D3: Adjective Opposites (cold, sad, slow, small)
+      const op1 = document.getElementById('adj_opp1').value;
+      const op2 = document.getElementById('adj_opp2').value;
+      const op3 = document.getElementById('adj_opp3').value;
+      const op4 = document.getElementById('adj_opp4').value;
+      const cardD3 = document.querySelector(`[data-qid="secD_q3"]`);
+      let d3Score = 0;
+      if (op1 === 'cold') d3Score += 1;
+      if (op2 === 'sad') d3Score += 1;
+      if (op3 === 'slow') d3Score += 1;
+      if (op4 === 'small') d3Score += 1;
+      totalMarks += d3Score;
+      setCardFeedback(cardD3, d3Score === 4, 'Hot-cold, Happy-sad, Fast-slow, Big-small');
+
+      // Display Modal and Audio Chimes
+      showModal(totalMarks);
+    }
+
+    function showModal(marks) {
+      const studentName = document.getElementById('studentName').value.trim() || 'Class 2 Student';
+      document.getElementById('studentGreeting').innerText = `Namaste, ${studentName}! Here is your test evaluation:`;
+      document.getElementById('finalScore').innerText = marks;
+
+      const scorePercent = (marks / 50) * 100;
+      document.getElementById('scoreBar').style.width = scorePercent + '%';
+
+      const titleEl = document.getElementById('resultTitle');
+      const badgeEl = document.getElementById('badgeIcon');
+      const feedbackEl = document.getElementById('nepaliFeedback');
+
+      if (marks >= 40) {
+        badgeEl.innerText = '🥇🌟';
+        titleEl.innerText = 'Sabash! Outstanding Result!';
+        feedbackEl.innerText = '🇳🇵 "Dherai Ramro! (Very Good!) You have excellent command over English Grammar Units 1 to 14. Keep up the bright work!"';
+        playSuccessChime();
+        triggerConfetti();
+      } else if (marks >= 25) {
+        badgeEl.innerText = '🥈✨';
+        titleEl.innerText = 'Ramro Chha! Good Job!';
+        feedbackEl.innerText = '👍 "Good effort! Review the missed questions above to master countable words, pronouns, and apostrophes."';
+        playSuccessChime();
+      } else {
+        badgeEl.innerText = '🌱📚';
+        titleEl.innerText = 'Keep Practicing!';
+        feedbackEl.innerText = '💪 "Pheri prayas garnuhos! (Try again!) Read Units 1 to 14 with your teacher and try the test once more."';
+        playSoftBoing();
+      }
+
+      document.getElementById('resultModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('resultModal').classList.add('hidden');
+    }
+
+    function resetExam() {
+      // Clear inputs
+      document.querySelectorAll('input[type="text"]').forEach(input => {
+        if (input.id !== 'studentName' && input.id !== 'rollNo') {
+          input.value = '';
+        }
+      });
+      document.querySelectorAll('select').forEach(select => select.value = '');
+
+      // Clear buttons
+      document.querySelectorAll('.option-card').forEach(btn => {
+        btn.classList.remove('selected', 'border-indigo-600', 'bg-indigo-50');
+      });
+      document.querySelectorAll('.classifier-btn').forEach(btn => {
+        btn.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+        btn.classList.add('bg-white', 'text-slate-800');
+      });
+
+      // Clear state and feedbacks
+      for (let k in userSelections) delete userSelections[k];
+      document.querySelectorAll('.answer-feedback').forEach(f => {
+        f.classList.add('hidden');
+        f.innerHTML = '';
+      });
+
+      closeModal();
+      playTone(330, 'sine', 0.1);
+    }
+  </script>
+</body>
+</html>
